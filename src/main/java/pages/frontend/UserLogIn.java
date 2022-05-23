@@ -1,5 +1,4 @@
 package pages.frontend;
-
 import core.Base;
 import org.openqa.selenium.By;
 import org.testng.Assert;
@@ -8,7 +7,6 @@ import utils.Browser;
 public class UserLogIn extends Base {
 
     private static String LoginPageURL = "http://shop.pragmatic.bg/";
-
 
     //private static String email = "testfcnidfhewosrt@test.com";
     //private static String password = "123456";
@@ -23,6 +21,9 @@ public class UserLogIn extends Base {
 private static By accountVerificationHeading = By.xpath("//h2" +
         "[contains" +
         "(text(), 'Orders')]");
+
+private static By accountNotFoundHeading = By.xpath(
+        "//div[contains(text(),'Warning')]");
 
 public static void open() {
     Browser.driver.get(LoginPageURL);
@@ -49,5 +50,13 @@ public static void open() {
     public static void verifySuccessfulLogin (String expectedText, String errorMessage) {
         String textOnPage = getText(accountVerificationHeading);
         Assert.assertEquals(expectedText, textOnPage, errorMessage);
+    }
+
+    public static void verifyUnsuccessfulLogin(String expectedText, String errorMessage) {
+        String accountNotFound =
+                getText(accountNotFoundHeading);
+        Assert.assertEquals(expectedText,
+                accountNotFound,
+                errorMessage);
     }
 }

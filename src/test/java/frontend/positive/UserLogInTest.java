@@ -1,5 +1,4 @@
 package frontend.positive;
-
 import core.BaseTest;
 import org.testng.annotations.Test;
 import pages.frontend.UserLogIn;

@@ -10,10 +10,10 @@ public class NewUserRegistrationTest extends BaseTest {
     public void newUserRegistration(){
         NewUserRegistration.open();
         NewUserRegistration.openRegistrationTab("Y",
-                "S", "testfcnidfhewosrt125854@test.com",
+                "S", "testfcnidfhewhugy21g520@test.com",
                 "+35989898989", "123456", "123456");
 NewUserRegistration.verifySuccessfulRegistration("Your " +
-        "Account Has Been Created!\n", "This registration" +
+        "Account Has Been Created!", "This registration" +
         " was not successful.");
     }
 

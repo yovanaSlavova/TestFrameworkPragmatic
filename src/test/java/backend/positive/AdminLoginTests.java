@@ -12,8 +12,10 @@ public class AdminLoginTests extends BaseTest {
 
         AdminLogin.open();
         AdminLogin.login("admin", "parola123!");
-        AdminHeader.verifyAccountFullName("Milen Strahinski",
-                 "You were unable to login as we did not found the name Milen Strahinski");
+        AdminHeader.verifyAccountFullName("Milen " +
+                        "Strahinski",
+                 "You were unable to login as we did not " +
+                         "found the name Milen Strahinski");
     }
 
 

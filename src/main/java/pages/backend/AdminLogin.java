@@ -44,6 +44,7 @@ public class AdminLogin extends Base {
      */
     public static void verifyInvalidLoginValidationMessage(String expectedInvalidLoginValidationMessage, String messageOnFailure) {
         String actualInvalidLoginValidationMessage = getText(INVALID_LOGIN_VALIDATION_MESSAGE_DIV).trim();
-        Assert.assertTrue(actualInvalidLoginValidationMessage.contains(expectedInvalidLoginValidationMessage), messageOnFailure);
+        Assert.assertTrue(actualInvalidLoginValidationMessage.contains(expectedInvalidLoginValidationMessage),
+                (messageOnFailure));
     }
 }
